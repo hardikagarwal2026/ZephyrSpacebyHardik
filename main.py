@@ -68,12 +68,18 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Add the Google site verification meta tag
-st.markdown(
+st.components.v1.html(
     """
-    <meta name="google-site-verification" content="etMwlH9VoJYC60f30C0QCUPpzTH8Dk67s-TmyjhEEnU" />
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="google-site-verification" content="etMwlH9VoJYC60f30C0QCUPpzTH8Dk67s-TmyjhEEnU" />
+    </head>
+    <body>
+    </body>
+    </html>
     """,
-    unsafe_allow_html=True
+    height=0,  # Set to 0 so it doesn't take up any space
 )
 
 st.markdown("<h1 class='custom-title'>Zephyr Space 📚</h1>", unsafe_allow_html=True)
