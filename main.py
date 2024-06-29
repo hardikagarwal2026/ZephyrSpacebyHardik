@@ -4,8 +4,6 @@ import base64
 from langchain.llms import GooglePalm
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
-from langchain.llms import GooglePalm
-from langchain.prompts import PromptTemplate
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -63,19 +61,25 @@ st.markdown(
         font-size: 48px; /* Adjust font size */
         font-weight: bold; /* Make text bold */
         font-family: 'Arial', sans-serif; /* Change font family if needed */
-        color: orange
-; /* Adjust text color */
+        color: orange; /* Adjust text color */
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
+# Add the Google site verification meta tag
+st.markdown(
+    """
+    <meta name="google-site-verification" content="etMwlH9VoJYC60f30C0QCUPpzTH8Dk67s-TmyjhEEnU" />
+    """,
+    unsafe_allow_html=True
+)
 
 st.markdown("<h1 class='custom-title'>Zephyr Space 📚</h1>", unsafe_allow_html=True)
 
 st.markdown(
-       """
+    """
     <style>
     .stTextInput {
         background-color: #E1C48F; /* RGB(225, 196, 143) */
@@ -94,20 +98,17 @@ st.markdown(
     </style>
     """,
     unsafe_allow_html=True
-
 )
-
 
 st.markdown(
     """
     <style>
     .white-text {
         color: orange;
-
     }
-    .header{
+    .header {
         color: #A9A9A9;
-        }
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -130,8 +131,7 @@ if query:
             thumbnail = book['volumeInfo'].get('imageLinks', {}).get('thumbnail', '')
             if thumbnail:
                 st.image(thumbnail)
-
-      
+            
             st.markdown("<div class='white-text'><strong>Read Book:</strong></div>", unsafe_allow_html=True)
             if 'previewLink' in book['volumeInfo']:
                 preview_link = book['volumeInfo']['previewLink']
@@ -150,7 +150,6 @@ if selected_book and question:
     book_info = next(book for book in books if book['volumeInfo'].get('title', 'N/A') == selected_book)
     book_summary = book_info['volumeInfo'].get('description', 'N/A')
 
-
     prompt = (f"Book Summary: {book_summary}\n\n"
               f"Question: {question}\n"
               "Answer: If the summary contains sufficient information, use it to answer the question. "
@@ -163,14 +162,12 @@ if selected_book and question:
     chain = LLMChain(llm=llm, prompt=prompt_template)
 
     try:
-      
         answer = chain({"prompt": prompt})
         text_answer = answer["text"]
 
         st.markdown(f"<div class='white-text'>{text_answer}</div>", unsafe_allow_html=True)
     except Exception as e:
         st.error(f"Error occurred: {e}")
-
 
 st.markdown('<h1 class="header">Personalized Book Recommendations</h1>', unsafe_allow_html=True)
 preferences = st.text_input("Enter your reading preferences:")
@@ -198,16 +195,15 @@ if preferences:
     except Exception as e:
         st.error(f"An error occurred: {e}")
 
-
 st.markdown('<h1 class="header">Sentiment Analysis of Book Reviews</h1>', unsafe_allow_html=True)
 review_text = st.text_area("Enter a book review:")
 if review_text:
     prompt_template = PromptTemplate(
-         input_variables=["review_text"],
-         template = "Given a review of a book{review_text}, analyze its sentiment and provide a recommendation. If the sentiment of the review is positive, recommend reading the book. If the sentiment of the review is negative, suggest trying another book as you might not enjoy this one."
-         )
+        input_variables=["review_text"],
+        template="Given a review of a book {review_text}, analyze its sentiment and provide a recommendation. If the sentiment of the review is positive, recommend reading the book. If the sentiment of the review is negative, suggest trying another book as you might not enjoy this one."
+    )
     chain = LLMChain(llm=llm, prompt=prompt_template)
-    sentiment = chain({review_text})
+    sentiment = chain({"review_text": review_text})
     text_sentiment = sentiment["text"]
     st.write("<span style='color: orange;'>Sentiment Analysis:</span>", unsafe_allow_html=True)
     st.markdown(f"<div class='white-text'>{text_sentiment}</div>", unsafe_allow_html=True)
