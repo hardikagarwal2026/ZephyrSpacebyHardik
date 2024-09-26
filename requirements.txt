@@ -24,6 +24,7 @@ markupsafe==2.1.5
 marshmallow==3.21.3
 multidict==6.0.5
 mypy-extensions==1.0.0
+numpy<2,>=1
 pandas==2.2.3
 pillow>=7.1.0,<10
 protobuf==3.20.3
@@ -58,4 +59,3 @@ validators==0.28.3
 watchdog==4.0.1
 yarl==1.9.4
 zipp==3.19.2
-numpy<2,>=1
