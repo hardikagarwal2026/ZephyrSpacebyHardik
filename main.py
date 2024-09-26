@@ -1,10 +1,10 @@
 import streamlit as st
 import requests
-import base64
-from langchain.llms import GooglePalm
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 import os
+import base64
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -16,7 +16,9 @@ if not google_api_key:
 if not books_api_key:
     st.error("Books API Key is not set.")
 
-llm = GooglePalm(google_api_key=google_api_key, temperature=0)
+llm = ChatGoogleGenerativeAI(
+    model="gemini-1.5-pro",temperature=0)
+
 
 books_api_endpoint = 'https://www.googleapis.com/books/v1/volumes'
 
