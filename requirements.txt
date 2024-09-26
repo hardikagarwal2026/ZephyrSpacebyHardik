@@ -16,20 +16,17 @@ greenlet==3.0.3
 idna==3.7
 importlib-metadata==8.0.0
 jinja2==3.1.4
-jsonschema==4.23.0  # Updated version
+jsonschema==4.23.0
 jsonschema-specifications==2023.12.1
 langchain==0.0.284
-# Ensure langchain_google_genai is referenced if it is indeed separate
-# If it's part of langchain, you can comment or remove the next line
-langchain_google_genai  # Add this if it's separate
 langsmith==0.0.92
 markupsafe==2.1.5
 marshmallow==3.21.3
 multidict==6.0.5
 mypy-extensions==1.0.0
-numpy==1.26.4  # Reverted to a compatible version
+numpy==1.26.4  # Ensure this is the compatible version
 packaging==24.1
-pandas==2.2.3  # Updated version
+pandas==2.2.3
 pillow==10.3.0
 protobuf==3.20.3
 pyarrow==16.1.0
@@ -39,28 +36,27 @@ pydeck==0.9.1
 pympler==1.1
 python-dateutil==2.9.0.post0
 python-dotenv==0.19.2
-pytz==2024.2  # Updated version
+pytz==2024.2
 pyyaml==6.0.1
 referencing==0.35.1
 regex==2024.5.15
 requests==2.32.3
-rpds-py==0.20.0  # Updated version
+rpds-py==0.20.0
 semver==3.0.2
 six==1.16.0
 smmap==5.0.1
 sqlalchemy==2.0.31
-streamlit==1.26.0  # Updated streamlit version
+streamlit==1.26.0
 tenacity==8.4.2
 toml==0.10.2
 toolz==0.12.1
 tornado==6.4.1
 typing-extensions==4.12.2
 typing-inspect==0.9.0
-tzdata==2024.2  # Updated version
+tzdata==2024.2
 tzlocal==5.2
 urllib3==2.2.2
 validators==0.28.3
 watchdog==4.0.1
 yarl==1.9.4
 zipp==3.19.2
-google-generativeai  # Only if necessary, confirm the version
