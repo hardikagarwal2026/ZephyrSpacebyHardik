@@ -58,3 +58,4 @@ validators==0.28.3
 watchdog==4.0.1
 yarl==1.9.4
 zipp==3.19.2
+numpy<2,>=1
