@@ -64,3 +64,6 @@ watchdog==4.0.1
 yarl==1.9.4
 zipp==3.19.2
 google-generativeai
+swig==4.0.2
+faiss-cpu
+tiktoken
