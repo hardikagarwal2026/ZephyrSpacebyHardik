@@ -24,7 +24,7 @@ marshmallow==3.21.3
 multidict==6.0.5
 mypy-extensions==1.0.0
 numexpr==2.10.1
-numpy==1.26.4
+numpy==2.1.0
 packaging==24.1
 pandas==2.2.2
 pillow==10.3.0
