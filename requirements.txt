@@ -64,3 +64,5 @@ langchain
 langsmith
 langchain-core
 wikipedia-API
+faiss-cpu
+tiktoken
