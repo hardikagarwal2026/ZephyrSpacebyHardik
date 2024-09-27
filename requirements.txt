@@ -58,8 +58,8 @@ validators==0.28.3
 watchdog==4.0.1
 yarl==1.9.4
 zipp==3.19.2
+langchain==0.0.284
 langchain-google-genai==2.0.0
-langchain
-langsmith
 langchain-core
+langsmith
 wikipedia-API
