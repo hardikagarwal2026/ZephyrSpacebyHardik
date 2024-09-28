@@ -297,7 +297,7 @@ elif section == "Book Q&A":
                    "Book Summary: {book_summary}\n\n"
                    "Question: {question}\n"
                    "Answer: If the summary contains sufficient information, use it to answer the question. "
-                   "If not, use your own knowledge to provide a comprehensive answer."
+                   "If not, use your own knowledge to provide a comprehensive answer.Don't mention in answer that you are using book summary to answer the question."
                 )
             chain = prompt | llm
             
