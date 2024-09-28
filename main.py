@@ -8,8 +8,8 @@ import base64
 from dotenv import load_dotenv
 load_dotenv()
 
-google_api_key = os.environ["GOOGLE_API_KEY"]
-books_api_key = os.environ["books_api_key"]
+google_api_key = "AIzaSyB7zN_GFklC2F09mqxTiwf3gsBpK-MsYdw"
+books_api_key = "AIzaSyCkBsGITR_52hAYdE1zlH1QnaLsuP3W8gk"
 
 if not google_api_key:
     st.error("Google API Key is not set.")
