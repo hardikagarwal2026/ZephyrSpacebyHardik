@@ -353,22 +353,51 @@ elif section == "Author Search":
 
     st.markdown('</div>', unsafe_allow_html=True)
 
+# elif section == "Book Quiz":
+#     st.markdown('<div class="section-card"><h2 class="header">Challenge Your Literary Acumen</h2>', unsafe_allow_html=True)
+
+#     query = st.text_input("Share the book title you're curious about for a quiz.")
+
+#     if query:
+#         quiz = generate_quiz(llm, query)
+#         if quiz:
+#             user_answers = display_quiz(quiz)
+#             if st.button("Submit"):
+#                 correct_answers = [q['correct_answer'] for q in quiz]
+#                 calculate_score(user_answers, correct_answers)
+#         else:
+#             st.markdown("<p style='color: orange;'>We couldn't find a quiz for the entered book at the moment. We're working to update our data and hope to have it available soon. Thank you for your patience!</p>",unsafe_allow_html=True)
+#     st.markdown('</div>', unsafe_allow_html=True)
+
 elif section == "Book Quiz":
+    if 'quiz' not in st.session_state:
+        st.session_state.quiz = None
+
+    if 'user_answers' not in st.session_state:
+        st.session_state.user_answers = {}
+
+    # App logic
     st.markdown('<div class="section-card"><h2 class="header">Challenge Your Literary Acumen</h2>', unsafe_allow_html=True)
 
     query = st.text_input("Share the book title you're curious about for a quiz.")
 
     if query:
-        quiz = generate_quiz(llm, query)
-        if quiz:
-            user_answers = display_quiz(quiz)
-            if st.button("Submit"):
-                correct_answers = [q['correct_answer'] for q in quiz]
-                calculate_score(user_answers, correct_answers)
-        else:
-            st.markdown("<p style='color: orange;'>We couldn't find a quiz for the entered book at the moment. We're working to update our data and hope to have it available soon. Thank you for your patience!</p>",unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+        if st.button("Generate Quiz") or st.session_state.quiz is None:
+            quiz = generate_quiz(llm, query)
+            if quiz:
+                st.session_state.quiz = quiz  # Store the quiz in session state
+            else:
+                st.markdown("<p style='color: orange;'>We couldn't find a quiz for the entered book at the moment. We're working to update our data and hope to have it available soon. Thank you for your patience!</p>", unsafe_allow_html=True)
 
+        if st.session_state.quiz:
+            # Display the quiz and store user answers in session state
+            st.session_state.user_answers = display_quiz(st.session_state.quiz)
+
+            if st.button("Submit"):
+                correct_answers = [q['correct_answer'] for q in st.session_state.quiz]
+                calculate_score(st.session_state.user_answers, correct_answers)
+
+    st.markdown('</div>', unsafe_allow_html=True)
 
 footer = """
 <style>
