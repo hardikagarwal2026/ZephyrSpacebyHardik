@@ -296,8 +296,9 @@ elif section == "Book Q&A":
             prompt = ChatPromptTemplate.from_template(
                    "Book Summary: {book_summary}\n\n"
                    "Question: {question}\n"
-                   "Answer: If the summary contains sufficient information, use it to answer the question. "
-                   "If not, use your own knowledge to provide a comprehensive answer.Don't mention in answer that you are using book summary to answer the question."
+                   "Answer: Provide a detailed response to the question based on the relevant information. If the context isn't sufficient, enrich the answer with additional knowledge, but ensure the response feels natural and complete."
+                  # "Answer: If the summary contains sufficient information, use it to answer the question. "
+                   #"If not, use your own knowledge to provide a comprehensive answer.Don't mention in answer that you are using book summary to answer the question."
                 )
             chain = prompt | llm
             
