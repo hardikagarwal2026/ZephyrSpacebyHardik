@@ -47,7 +47,7 @@ To get started with Zephyr Space, follow these steps:
 
 1. **Clone the repository:**
 
-git clone https://github.com/yourusername/zephyr-space.git
+git clone https://github.com/hardikagarwal2026/zephyr-space.git
 
 2. **Install dependencies:** Make sure you have Python 3.11 or above. You can install all necessary packages with:
 
