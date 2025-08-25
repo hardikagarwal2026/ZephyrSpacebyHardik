@@ -1,94 +1,147 @@
-📚 **Zephyr Space: Your Ultimate Book Journey** 🌟
+# Zephyr Space: Your Ultimate Book Journey
 
-Welcome to **Zephyr Space**, a dynamic web application designed to elevate your reading experience! Whether you're searching for your next great read, diving into book recommendations, analyzing reviews, or even challenging yourself with book-themed quizzes, we've got you covered. 🚀
+Welcome to **Zephyr Space**, a comprehensive web application designed to enhance your reading experience through intelligent book discovery, AI-powered insights, and interactive learning tools.
 
-🚀 **Features:**
+## Overview
 
-🔍 **Book Search & Exploration**
+Zephyr Space is a Streamlit-based web application that combines the power of Google Books API, Google's Gemini AI model, and Wikipedia to create a one-stop platform for book enthusiasts. Whether you're searching for your next read, analyzing book reviews, or testing your literary knowledge, this application provides all the tools you need.
 
-Easily find and explore books with just a few clicks. Get detailed information about titles, authors, and descriptions. Search and start reading immediately if a preview is available! 💡
+## Features
 
->**Search by title, author, or keywords** to discover your next favorite book.
+### Book Search & Exploration
+- **Comprehensive Search**: Find books by title, author, or keywords
+- **Detailed Information**: Access book details including descriptions, authors, publishers, and publication dates
+- **Preview Links**: Direct access to book previews when available through Google Books
+- **Book Covers**: Visual representation of books with thumbnail images
 
->Preview available books directly in the app with a link to the full text.
+### AI-Powered Book Q&A
+- **Intelligent Responses**: Ask questions about any book and receive AI-generated answers
+- **Context-Aware**: AI analyzes book summaries and provides relevant information
+- **Knowledge Enhancement**: When book context is insufficient, AI supplements with additional knowledge
 
->📖 **Preview** links for available books.
+### Sentiment Analysis
+- **Review Analysis**: Input book reviews to receive sentiment analysis
+- **Reading Recommendations**: Get AI-powered suggestions on whether to read a book based on review sentiment
+- **Insightful Feedback**: Understand the emotional tone of reviews before making reading decisions
 
-🤖 **Book Q&A (Powered by AI)**
+### Author Information
+- **Comprehensive Biographies**: Access detailed author information including birth dates, nationalities, and literary movements
+- **Awards & Honors**: Discover authors' achievements and recognition
+- **Writing Style Analysis**: Learn about authors' unique writing approaches and influences
+- **Wikipedia Integration**: Direct links to author Wikipedia pages for additional research
 
-Got questions about a book? Ask anything, and our AI will provide intelligent answers based on the book's content! ❓💬
+### Personalized Recommendations
+- **Custom Preferences**: Input your reading preferences to receive tailored book suggestions
+- **Curated Lists**: Get personalized book recommendations based on your interests
+- **Discovery Engine**: Find new authors and genres that match your taste
 
->**AI-Powered Q&A:** Ask questions and receive insightful answers related to the book you're exploring.
+### Interactive Book Quiz
+- **Knowledge Testing**: Challenge yourself with 10 multiple-choice questions about any book
+- **Instant Scoring**: Receive immediate feedback on your performance
+- **Learning Tool**: Use quizzes to reinforce your understanding of book content
+- **Adaptive Questions**: AI-generated questions based on book content
 
-📊 **Sentiment Analysis of Book Reviews**
+## Installation & Setup
 
-Analyze the sentiment of book reviews and decide whether it’s worth a read! 😊😟
+### Prerequisites
+- Python 3.11 or higher
+- Google API key for Gemini AI
+- Google Books API key
 
->**Sentiment Analysis:** Get an AI-generated review sentiment (positive or negative) along with recommendations on whether you should read the book.
+### Step-by-Step Installation
 
-👨‍🏫 **Author Search**
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/hardikagarwal2026/zephyr-space.git
+   cd zephyr-space
+   ```
 
-Explore detailed biographies of your favorite authors and learn about their literary journey. From their full name to their literary influences, discover it all! ✍️
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
->**Author Bio**: Full name, birthdate, genres, awards, and even a biography for your favorite authors.
+3. **Configure environment variables**
+   Create a `.env` file in the project root and add your API keys:
+   ```
+   GOOGLE_API_KEY=your-google-api-key
+   BOOKS_API_KEY=your-google-books-api-key
+   ```
 
-🎯 **Customized Book Recommendations**
+4. **Run the application**
+   ```bash
+   streamlit run main.py
+   ```
 
-Not sure what to read next? We provide personalized book recommendations based on your preferences! 🎯📚
+5. **Access the application**
+   Open your web browser and navigate to the URL displayed in the terminal (typically `http://localhost:8501`)
 
-🎮 **Fun Book Quiz**
+## How to Use
 
-Test your book knowledge with a fun multiple-choice quiz based on the book of your choice! 🧠🎉
+### Getting Started
+1. Launch the application using the sidebar navigation
+2. Choose from six main sections based on your needs
+3. Input your queries or preferences in the provided text fields
+4. Explore results and interact with the AI-powered features
 
->**10 Quiz Questions:** Take a quiz about the book, test your knowledge, and get your score immediately.
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-🛠️ **Installation:**
-To get started with Zephyr Space, follow these steps:
+### Navigation
+- **Book Search**: Find and explore books with detailed information
+- **Book Q&A**: Ask questions about specific books
+- **Customized Recommendations**: Get personalized book suggestions
+- **Sentiment Analysis**: Analyze book review sentiments
+- **Author Search**: Discover author information and biographies
+- **Book Quiz**: Test your knowledge with interactive quizzes
 
-1. **Clone the repository:**
+## Technical Architecture
 
-git clone https://github.com/hardikagarwal2026/zephyr-space.git
+### Backend Technologies
+- **Python**: Core application logic and data processing
+- **Streamlit**: Web application framework for interactive user interface
+- **LangChain**: AI framework for natural language processing and AI interactions
+- **Google Gemini**: Advanced language model for intelligent responses
 
-2. **Install dependencies:** Make sure you have Python 3.11 or above. You can install all necessary packages with:
+### API Integrations
+- **Google Books API**: Comprehensive book database and metadata
+- **Wikipedia API**: Author information and biographical data
+- **Google AI Services**: Gemini model for natural language understanding
 
-pip install -r requirements.txt
+### Key Components
+- **Modular Design**: Separate functions for each feature area
+- **Error Handling**: Robust error handling for API failures and edge cases
+- **Session Management**: Persistent quiz state and user interactions
+- **Responsive UI**: Clean, intuitive interface with consistent styling
 
-3. **Set up your environment variables:** Create a .env file in the root of the project and add your API keys:
+## Configuration
 
-env
-GOOGLE_API_KEY=your-google-api-key
-BOOKS_API_KEY=your-google-books-api-key
+### Environment Variables
+- `GOOGLE_API_KEY`: Required for AI-powered features using Gemini
+- `BOOKS_API_KEY`: Required for accessing Google Books API
 
-4. **Run the application:** Once everything is set up, you can run the app using Streamlit:
 
-streamlit run main.py
+## Troubleshooting
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-📚 **How It Works:**
-1. **Book Search:** Enter the name of the book in the search bar and explore various titles. The app fetches book data using the Google Books API. You'll get a brief description, authors, and a preview link to start reading! 🎉
+### Common Issues
+- **API Key Errors**: Ensure both Google API keys are properly set in your `.env` file
+- **No Results**: Check your internet connection and API key validity
+- **Quiz Generation Issues**: Some books may not have sufficient content for quiz generation
 
-2. **Book Q&A:** Type your book-related question, and our AI (powered by the Gemini language model) will generate accurate answers for you. 🤖
+## Contributing
 
-3. **Sentiment Analysis:** Input a review of any book, and our AI will analyze whether the sentiment is positive or negative and give a reading recommendation. 📊
+We welcome contributions to improve Zephyr Space! Here's how you can help:
 
-4. **Author Search:** Learn more about your favorite authors, including their biographical details, awards, and writing style. Just enter their name and discover all! 👨‍🏫
+1. Fork the repository
+2. Create a feature branch for your changes
+3. Implement your improvements or bug fixes
+4. Test thoroughly to ensure functionality
+5. Submit a pull request with detailed descriptions
 
-5. **Customized Recommendations:** Based on your input, get personalized book recommendations to fit your unique tastes. 🎯
 
-6. **Book Quiz:** Take a fun quiz to test your knowledge about any book. Get instant feedback and see how well you score. 🎮
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-🛠️ **Technologies Used:**
+## Author
 
->**Python**: Backend logic.
+**Hardik Agarwal**
+- LinkedIn: [Hardik Agarwal](https://www.linkedin.com/in/hardik-agarwal2004/)
+- GitHub: [hardikagarwal2026](https://github.com/hardikagarwal2026)
 
->**Streamlit**: Interactive web app development.
+---
 
->**LangChain**: For AI-powered Q&A, sentiment analysis, and author information.
-
->**Google Books API**: For fetching book data.
-
->**Wikipedia API**: To retrieve author biographies.
-
-🌟 **Contributing:**
-
-Feel free to contribute to this project! Whether it's adding new features, fixing bugs, or improving documentation, all contributions are welcome. Create a fork, make your changes, and submit a pull request
+**Zephyr Space** - Transforming the way you discover, explore, and engage with literature through intelligent technology and comprehensive book resources.
